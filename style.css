@@ -1,0 +1,1643 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --night:#02030b;
+
+    --purple:#9b5cff;
+
+    --violet:#c46cff;
+
+    --pink:#ff62b8;
+
+    --blue:#58c7ff;
+
+    --white:#f8f7ff;
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:white;
+
+    background:#02030b;
+
+}
+
+
+/* =====================================
+   UNIVERSO
+===================================== */
+
+#app{
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(75,35,130,.5),
+            transparent 50%
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(50,100,190,.18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #010108,
+            #050518,
+            #0b0920,
+            #100a27
+        );
+
+}
+
+
+/* =====================================
+   ESTRELLAS
+===================================== */
+
+#stars{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+}
+
+.sky-star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+        0 0 5px white,
+
+        0 0 12px var(--blue),
+
+        0 0 25px rgba(130,100,255,.7);
+
+    animation:
+
+        twinkle var(--duration)
+        ease-in-out infinite
+        alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.15;
+
+        transform:scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================
+   NEBULOSAS
+===================================== */
+
+.nebula{
+
+    position:absolute;
+
+    width:65vw;
+    height:30vh;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.14;
+
+    z-index:2;
+
+}
+
+.nebula-one{
+
+    left:-20%;
+    top:45%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    transform:rotate(-15deg);
+
+}
+
+.nebula-two{
+
+    right:-20%;
+    top:55%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    transform:rotate(15deg);
+
+}
+
+
+/* =====================================
+   LUNA
+===================================== */
+
+.moon-glow{
+
+    position:absolute;
+
+    width:330px;
+    height:330px;
+
+    right:2%;
+    top:0%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(180,200,255,.2),
+            transparent 70%
+        );
+
+    filter:blur(10px);
+
+    z-index:3;
+
+}
+
+.moon{
+
+    position:absolute;
+
+    width:155px;
+    height:155px;
+
+    right:10%;
+    top:9%;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #e9edf5 40%,
+            #b5bdcc 72%,
+            #7b8495
+        );
+
+    box-shadow:
+
+        inset -20px -15px 30px
+        rgba(30,35,50,.45),
+
+        0 0 25px
+        rgba(220,230,255,.8),
+
+        0 0 70px
+        rgba(140,170,255,.35);
+
+    z-index:4;
+
+    animation:
+
+        moonFloat 7s
+        ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+    50%{
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+.crater{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+        rgba(70,75,90,.25);
+
+    box-shadow:
+        inset 2px 2px 5px
+        rgba(30,30,40,.25);
+
+}
+
+.c1{
+
+    width:35px;
+    height:35px;
+
+    left:25%;
+    top:22%;
+
+}
+
+.c2{
+
+    width:18px;
+    height:18px;
+
+    left:58%;
+    top:48%;
+
+}
+
+.c3{
+
+    width:27px;
+    height:27px;
+
+    left:25%;
+    top:65%;
+
+}
+
+.c4{
+
+    width:15px;
+    height:15px;
+
+    left:70%;
+    top:30%;
+
+}
+
+.c5{
+
+    width:21px;
+    height:21px;
+
+    left:55%;
+    top:72%;
+
+}
+
+
+/* =====================================
+   PÉTALOS
+===================================== */
+
+#petals{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:12;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    width:8px;
+    height:14px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffb5dc,
+            #8d3d72
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(255,90,190,.45);
+
+    animation:
+
+        falling
+        linear infinite;
+
+    opacity:.6;
+
+}
+
+@keyframes falling{
+
+    to{
+
+        transform:
+            translate(100px,110vh)
+            rotate(500deg);
+
+    }
+
+}
+
+
+/* =====================================
+   PANTALLAS
+===================================== */
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:20;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:scale(1.04);
+
+    transition:
+
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+.screen.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:scale(1);
+
+}
+
+
+/* =====================================
+   CRISTAL
+===================================== */
+
+.glass-card{
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(20,15,55,.68),
+            rgba(4,5,22,.65)
+        );
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:30px;
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+
+        0 25px 100px
+        rgba(0,0,0,.55),
+
+        0 0 50px
+        rgba(145,80,255,.12);
+
+}
+
+
+/* =====================================
+   TEXTO
+===================================== */
+
+.main-card{
+
+    width:min(720px,92vw);
+
+    padding:55px 40px;
+
+    text-align:center;
+
+}
+
+.text-card{
+
+    width:min(700px,92vw);
+
+    padding:50px 40px;
+
+    text-align:center;
+
+}
+
+.eyebrow{
+
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:
+
+        rgba(255,255,255,.62);
+
+}
+
+h1{
+
+    margin:18px 0;
+
+    font-size:
+        clamp(60px,12vw,110px);
+
+    font-weight:normal;
+
+    letter-spacing:3px;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 25px var(--blue),
+
+        0 0 50px var(--purple),
+
+        0 0 90px var(--pink);
+
+}
+
+h2{
+
+    margin:18px 0 25px;
+
+    font-size:
+        clamp(32px,6vw,55px);
+
+    font-weight:normal;
+
+    text-shadow:
+
+        0 0 18px
+        rgba(170,190,255,.35);
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.85;
+
+    color:
+
+        rgba(248,248,255,.88);
+
+    margin-bottom:18px;
+
+}
+
+.main-phrase{
+
+    max-width:600px;
+
+    margin:
+        25px auto 35px;
+
+}
+
+
+/* =====================================
+   LÍNEAS
+===================================== */
+
+.line{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#e1ddff;
+
+    text-shadow:
+
+        0 0 20px var(--purple);
+
+}
+
+.line span{
+
+    width:70px;
+
+    height:1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--violet),
+            transparent
+        );
+
+}
+
+
+/* =====================================
+   BOTONES NEÓN
+===================================== */
+
+.neon-button,
+.small-button{
+
+    border:
+
+        1px solid
+        rgba(190,130,255,.5);
+
+    border-radius:999px;
+
+    padding:
+        14px 27px;
+
+    color:white;
+
+    background:
+
+        rgba(130,70,255,.08);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 0 10px
+        rgba(150,70,255,.15);
+
+}
+
+.neon-button:hover,
+.small-button:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    background:
+
+        rgba(170,80,255,.16);
+
+    border-color:
+
+        rgba(255,120,210,.8);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(180,80,255,.6),
+
+        0 0 35px
+        rgba(255,70,190,.25);
+
+}
+
+.neon-button span{
+
+    margin-left:8px;
+
+    color:#e6c9ff;
+
+}
+
+
+/* =====================================
+   CONSTELACIÓN
+===================================== */
+
+.constellation{
+
+    display:block;
+
+}
+
+.constellation-title{
+
+    position:absolute;
+
+    top:8%;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:90%;
+
+    text-align:center;
+
+}
+
+.constellation-title h2{
+
+    font-size:
+        clamp(28px,5vw,48px);
+
+}
+
+#counter{
+
+    font-family:Arial,sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    opacity:.6;
+
+}
+
+
+/* =====================================
+   ESTRELLAS INTERACTIVAS
+===================================== */
+
+.memory-star{
+
+    position:absolute;
+
+    width:65px;
+    height:65px;
+
+    border:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:42px;
+
+    cursor:pointer;
+
+    z-index:40;
+
+    text-shadow:
+
+        0 0 8px white,
+
+        0 0 20px var(--blue),
+
+        0 0 40px var(--purple);
+
+    animation:
+
+        starFloat
+        3s
+        ease-in-out
+        infinite alternate;
+
+}
+
+.memory-star:hover{
+
+    transform:scale(1.35);
+
+    color:#ffd6ec;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 30px var(--pink),
+
+        0 0 60px var(--violet);
+
+}
+
+.memory-star.found{
+
+    color:#ffb9de;
+
+}
+
+.star-one{
+
+    left:17%;
+    top:32%;
+
+}
+
+.star-two{
+
+    left:47%;
+    top:23%;
+
+    animation-delay:-.6s;
+
+}
+
+.star-three{
+
+    right:14%;
+    top:34%;
+
+    animation-delay:-1.2s;
+
+}
+
+.star-four{
+
+    right:25%;
+    bottom:18%;
+
+    animation-delay:-1.8s;
+
+}
+
+.star-five{
+
+    left:25%;
+    bottom:20%;
+
+    animation-delay:-2.4s;
+
+}
+
+@keyframes starFloat{
+
+    to{
+
+        margin-top:-10px;
+
+    }
+
+}
+
+
+/* =====================================
+   LÍNEAS CONSTELACIÓN
+===================================== */
+
+.constellation-lines{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.constellation-lines span{
+
+    position:absolute;
+
+    height:1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(170,200,255,.35),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(100,150,255,.3);
+
+}
+
+.constellation-lines span:nth-child(1){
+
+    width:33%;
+
+    left:20%;
+
+    top:33%;
+
+    transform:rotate(-14deg);
+
+}
+
+.constellation-lines span:nth-child(2){
+
+    width:34%;
+
+    left:50%;
+
+    top:26%;
+
+    transform:rotate(15deg);
+
+}
+
+.constellation-lines span:nth-child(3){
+
+    width:30%;
+
+    left:65%;
+
+    top:37%;
+
+    transform:rotate(105deg);
+
+}
+
+.constellation-lines span:nth-child(4){
+
+    width:36%;
+
+    left:64%;
+
+    top:72%;
+
+    transform:rotate(184deg);
+
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.4);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:.4s;
+
+}
+
+.modal.open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.modal-card{
+
+    position:relative;
+
+    width:min(580px,92vw);
+
+    padding:45px 35px;
+
+    text-align:center;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:8px;
+    right:14px;
+
+    border:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+.modal-star{
+
+    font-size:32px;
+
+    color:white;
+
+    text-shadow:
+
+        0 0 15px white,
+
+        0 0 35px var(--blue);
+
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================
+   FLORES
+===================================== */
+
+.garden{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:13;
+
+    pointer-events:none;
+
+}
+
+.flower{
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    filter:
+
+        drop-shadow(
+            0 0 8px
+            rgba(255,80,190,.45)
+        );
+
+    animation:
+
+        flowerFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+.flower span{
+
+    position:absolute;
+
+    width:42px;
+    height:58px;
+
+    left:29px;
+    top:10px;
+
+    border-radius:
+        60% 40% 60% 40%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff9ed0,
+            #762b70
+        );
+
+    box-shadow:
+
+        inset -5px -8px 12px
+        rgba(50,0,50,.35),
+
+        0 0 8px
+        rgba(255,90,190,.4);
+
+}
+
+.flower span:nth-child(1){
+    transform:rotate(0deg);
+}
+
+.flower span:nth-child(2){
+    transform:rotate(72deg);
+}
+
+.flower span:nth-child(3){
+    transform:rotate(144deg);
+}
+
+.flower span:nth-child(4){
+    transform:rotate(216deg);
+}
+
+.flower span:nth-child(5){
+    transform:rotate(288deg);
+}
+
+.flower b{
+
+    position:absolute;
+
+    width:25px;
+    height:25px;
+
+    left:37px;
+    top:37px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 30%,
+            #fff2b0,
+            #b76b22
+        );
+
+    box-shadow:
+
+        0 0 12px
+        rgba(255,190,80,.6);
+
+}
+
+.flower-one{
+
+    left:4%;
+    bottom:2%;
+
+}
+
+.flower-two{
+
+    right:4%;
+    bottom:7%;
+
+    transform:scale(.8);
+
+    animation-delay:-2s;
+
+}
+
+.flower-three{
+
+    left:25%;
+    top:10%;
+
+    transform:scale(.4);
+
+    opacity:.45;
+
+    animation-delay:-3s;
+
+}
+
+@keyframes flowerFloat{
+
+    50%{
+
+        transform:
+            translateY(-12px)
+            rotate(2deg);
+
+    }
+
+}
+
+
+/* =====================================
+   TIMELINE
+===================================== */
+
+.timeline-card{
+
+    width:min(760px,94vw);
+
+    max-height:86vh;
+
+    overflow:auto;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+}
+
+.timeline{
+
+    max-width:580px;
+
+    margin:
+        30px auto;
+
+    text-align:left;
+
+}
+
+.timeline article{
+
+    position:relative;
+
+    border-left:
+        1px solid
+        rgba(190,150,255,.35);
+
+    padding:
+        0 0 25px 25px;
+
+}
+
+.timeline article::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-5px;
+
+    top:4px;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+
+        0 0 10px var(--blue),
+
+        0 0 20px var(--purple);
+
+}
+
+.timeline strong{
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    color:#d8caff;
+
+}
+
+
+/* =====================================
+   CARTA FINAL
+===================================== */
+
+.final{
+
+    overflow:auto;
+
+    align-items:flex-start;
+
+    padding:
+        7vh 20px;
+
+}
+
+.letter-card{
+
+    width:min(760px,94vw);
+
+    max-height:88vh;
+
+    overflow:auto;
+
+    padding:48px 40px;
+
+    text-align:center;
+
+}
+
+.letter-card h2{
+
+    color:#ffd9ec;
+
+    text-shadow:
+
+        0 0 15px var(--pink),
+
+        0 0 35px var(--purple);
+
+}
+
+.highlight{
+
+    color:#ffd8ed;
+
+    font-size:20px;
+
+    text-shadow:
+
+        0 0 15px
+        rgba(255,100,190,.4);
+
+}
+
+.signature{
+
+    font-style:italic;
+
+    opacity:.7;
+
+    margin-top:30px;
+
+}
+
+
+/* =====================================
+   CORAZÓN DE ESTRELLAS
+===================================== */
+
+#heart{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    pointer-events:none;
+
+}
+
+.heart-star{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:20px;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 25px var(--pink),
+
+        0 0 45px var(--purple);
+
+    animation:
+
+        twinkle
+        2s
+        infinite
+        alternate;
+
+}
+
+
+/* =====================================
+   SECRETO
+===================================== */
+
+.secret{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:200;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(55,15,75,.98),
+            #01020b
+        );
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:1s;
+
+}
+
+.secret.open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.secret-heart{
+
+    font-size:100px;
+
+    color:#ffb5dc;
+
+    text-shadow:
+
+        0 0 15px white,
+
+        0 0 40px var(--pink),
+
+        0 0 80px var(--purple);
+
+    animation:
+
+        pulse
+        1.7s
+        infinite;
+
+}
+
+.secret strong{
+
+    font-size:21px;
+
+    color:#ffd9ed;
+
+}
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+
+/* =====================================
+   SONIDO
+===================================== */
+
+.sound{
+
+    position:absolute;
+
+    z-index:300;
+
+    right:15px;
+
+    bottom:15px;
+
+}
+
+.sound button{
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(190,130,255,.4);
+
+    background:
+        rgba(100,50,180,.12);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media(max-width:600px){
+
+    .moon{
+
+        width:100px;
+        height:100px;
+
+        right:5%;
+        top:7%;
+
+    }
+
+    .moon-glow{
+
+        width:210px;
+        height:210px;
+
+        right:-5%;
+        top:2%;
+
+    }
+
+    .main-card,
+    .text-card{
+
+        padding:
+            38px 22px;
+
+    }
+
+    p{
+
+        font-size:16px;
+
+        line-height:1.75;
+
+    }
+
+    .eyebrow{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+    .star-one{
+
+        left:7%;
+        top:34%;
+
+    }
+
+    .star-two{
+
+        left:39%;
+        top:27%;
+
+    }
+
+    .star-three{
+
+        right:5%;
+        top:38%;
+
+    }
+
+    .star-four{
+
+        right:16%;
+        bottom:20%;
+
+    }
+
+    .star-five{
+
+        left:12%;
+        bottom:23%;
+
+    }
+
+    .modal-card{
+
+        padding:
+            40px 22px;
+
+    }
+
+    .timeline-card{
+
+        padding:
+            38px 22px;
+
+    }
+
+    .letter-card{
+
+        padding:
+            40px 22px;
+
+    }
+
+    .flower-one{
+
+        left:-10%;
+
+    }
+
+    .flower-two{
+
+        right:-10%;
+
+    }
+
+}

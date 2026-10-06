@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#050014">
+
+    <title>Un pequeño universo para ti ✦</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- =========================
+         CIELO
+    ========================== -->
+
+    <div id="stars"></div>
+
+    <div id="shooting-stars"></div>
+
+    <div class="nebula nebula-one"></div>
+    <div class="nebula nebula-two"></div>
+
+    <!-- =========================
+         LUNA
+    ========================== -->
+
+    <div class="moon-glow"></div>
+
+    <div class="moon">
+
+        <span class="crater c1"></span>
+        <span class="crater c2"></span>
+        <span class="crater c3"></span>
+        <span class="crater c4"></span>
+        <span class="crater c5"></span>
+
+    </div>
+
+
+    <!-- =========================
+         PARTÍCULAS
+    ========================== -->
+
+    <div id="particles"></div>
+
+    <div id="petals"></div>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section
+        class="screen active"
+        id="home"
+    >
+
+        <div class="glass-card main-card">
+
+            <span class="eyebrow">
+                ✦ UN PEQUEÑO UNIVERSO PARA TI ✦
+            </span>
+
+            <h1>Yeissel</h1>
+
+            <div class="line">
+                <span></span>
+                ✦
+                <span></span>
+            </div>
+
+            <p class="main-phrase">
+
+                Hay personas que llegan sin hacer ruido
+                y terminan dejando luz en lugares que
+                ni siquiera sabíamos que estaban oscuros.
+
+            </p>
+
+            <button
+                class="neon-button"
+                data-next="welcome"
+            >
+
+                Abrir el cielo
+
+                <span>✦</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIENVENIDA
+    ========================== -->
+
+    <section
+        class="screen"
+        id="welcome"
+    >
+
+        <div class="glass-card text-card">
+
+            <span class="eyebrow">
+                ANTES DE SEGUIR...
+            </span>
+
+            <h2>
+                Quédate un momento.
+            </h2>
+
+            <p>
+                No sabía exactamente qué regalarte,
+                así que decidí construir algo.
+            </p>
+
+            <p>
+                Algo pequeño, imperfecto,
+                pero hecho pensando en ti.
+            </p>
+
+            <p>
+                Cada estrella que vas a encontrar
+                guarda unas palabras que quería decirte.
+            </p>
+
+            <button
+                class="neon-button"
+                data-next="constellation"
+            >
+
+                Descubrir las estrellas
+
+                <span>✦</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONSTELACIÓN
+    ========================== -->
+
+    <section
+        class="screen constellation"
+        id="constellation"
+    >
+
+        <div class="constellation-title">
+
+            <span class="eyebrow">
+                CINCO ESTRELLAS
+            </span>
+
+            <h2>
+                Encuentra las que brillan para ti.
+            </h2>
+
+            <p id="counter">
+                0 / 5
+            </p>
+
+        </div>
+
+
+        <!-- LÍNEAS -->
+
+        <div class="constellation-lines">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- ESTRELLAS -->
+
+        <button
+            class="memory-star star-one"
+            data-memory="0"
+        >
+            ✦
+        </button>
+
+        <button
+            class="memory-star star-two"
+            data-memory="1"
+        >
+            ✦
+        </button>
+
+        <button
+            class="memory-star star-three"
+            data-memory="2"
+        >
+            ✦
+        </button>
+
+        <button
+            class="memory-star star-four"
+            data-memory="3"
+        >
+            ✦
+        </button>
+
+        <button
+            class="memory-star star-five"
+            data-memory="4"
+        >
+            ✦
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <div
+        class="modal"
+        id="memoryModal"
+    >
+
+        <div class="glass-card modal-card">
+
+            <button
+                class="close"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+            <div class="modal-star">
+                ✦
+            </div>
+
+            <span
+                class="eyebrow"
+                id="memoryTitle"
+            >
+            </span>
+
+            <p id="memoryText">
+            </p>
+
+            <button
+                class="small-button"
+                id="continue"
+            >
+
+                Seguir mirando ✦
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JARDÍN
+    ========================== -->
+
+    <div class="garden">
+
+        <div class="flower flower-one">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <b></b>
+
+        </div>
+
+
+        <div class="flower flower-two">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <b></b>
+
+        </div>
+
+
+        <div class="flower flower-three">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <b></b>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LÍNEA DEL TIEMPO
+    ========================== -->
+
+    <section
+        class="screen"
+        id="timeline"
+    >
+
+        <div class="glass-card timeline-card">
+
+            <span class="eyebrow">
+                UNA PEQUEÑA HISTORIA
+            </span>
+
+            <h2>
+                Algunas cosas merecen recordarse.
+            </h2>
+
+
+            <div class="timeline">
+
+                <article>
+
+                    <strong>
+                        2020
+                    </strong>
+
+                    <p>
+                        El comienzo de una historia que
+                        ninguna de las dos podía imaginar
+                        cómo iba a cambiar con el tiempo.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <strong>
+                        Después
+                    </strong>
+
+                    <p>
+                        Conversaciones, risas, etapas
+                        diferentes y recuerdos que fueron
+                        quedándose con nosotros.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <strong>
+                        Hoy
+                    </strong>
+
+                    <p>
+                        Después de tantas vueltas,
+                        nuestros caminos todavía encuentran
+                        alguna manera de cruzarse.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <button
+                class="neon-button"
+                data-next="final"
+            >
+
+                Tengo algo más que decirte
+
+                <span>♡</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================== -->
+
+    <section
+        class="screen final"
+        id="final"
+    >
+
+        <div id="heart">
+
+        </div>
+
+
+        <div class="glass-card letter-card">
+
+            <span class="eyebrow">
+                ✦ PARA TI ✦
+            </span>
+
+
+            <h2>
+                Feliz cumpleaños,
+                Yeissel.
+            </h2>
+
+
+            <div class="line">
+                <span></span>
+                ♡
+                <span></span>
+            </div>
+
+
+            <p>
+
+                No sabía cómo guardar en un regalo
+                todos esos pequeños momentos que
+                alguna vez significaron algo para mí.
+
+            </p>
+
+
+            <p>
+
+                Podía comprarte algo bonito,
+                pero quería hacer algo que tuviera
+                una parte de mí.
+
+                Así que hice este pequeño cielo.
+
+            </p>
+
+
+            <p>
+
+                Quizá para ti algunas conversaciones,
+                risas o detalles fueron momentos
+                normales.
+
+                Para mí, algunos terminaron
+                convirtiéndose en recuerdos que
+                todavía guardo con muchísimo cariño.
+
+            </p>
+
+
+            <p>
+
+                Hemos cambiado.
+
+                Hemos pasado por distintas etapas
+                y nuestra historia no siempre ha sido
+                sencilla.
+
+                Pero incluso con todas esas vueltas,
+                me alegra haber coincidido contigo.
+
+            </p>
+
+
+            <p>
+
+                Ojalá este nuevo año te regale
+                momentos que te hagan reír,
+                personas que sepan cuidarte
+                y sueños que poco a poco
+                puedas convertir en realidad.
+
+            </p>
+
+
+            <p class="highlight">
+
+                Y si algún día olvidas lo especial
+                que puedes llegar a ser para alguien,
+                vuelve a mirar este cielo.
+
+            </p>
+
+
+            <p class="highlight">
+
+                No necesitas hacer nada extraordinario
+                para dejar una huella.
+
+                A veces basta con haber sido tú.
+
+            </p>
+
+
+            <p>
+
+                Gracias por formar parte
+                de mi historia. ♡
+
+            </p>
+
+
+            <p class="signature">
+
+                — Jessica
+
+            </p>
+
+
+            <button
+                class="small-button"
+                id="secretButton"
+            >
+
+                Hay una última estrella...
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECRETO
+    ========================== -->
+
+    <section
+        class="secret"
+        id="secret"
+    >
+
+        <div class="secret-heart">
+            ♥
+        </div>
+
+        <p>
+
+            Algunas personas no necesitan
+            quedarse de una determinada manera
+            para haber sido importantes.
+
+        </p>
+
+        <strong>
+
+            Gracias por haber coincidido conmigo. ✦
+
+        </strong>
+
+        <button
+            class="small-button"
+            id="back"
+        >
+
+            Volver al cielo
+
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         SONIDO
+    ========================== -->
+
+    <div class="sound">
+
+        <button id="soundButton">
+            ♫
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
